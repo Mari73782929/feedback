@@ -27,9 +27,8 @@ body {
 }
 .site-header h1 {
     font-size: 1.5rem;
-    color: #f5efef;
-    animation: glowText 1s infinite alternate;
-    background-color: #ff416c;
+    color: #fff;
+    animation: glowText 2s infinite alternate;
 }
 @keyframes glowText {
     from { text-shadow: 0 0 5px #fff, 0 0 10px #00c6ff; }
@@ -38,13 +37,12 @@ body {
 .site-header nav button {
     background: #ffffffcc;
     border: none;
-    padding: 8px 20px;
+    padding: 8px 15px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
-    margin-left: 25px;
+    margin-left: 10px;
     transition: 0.3s;
-
 }
 .site-header nav button:hover {
     background: #00c6ff;
