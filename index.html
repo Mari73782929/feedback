@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Feedback Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="img.png">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+    <h1>📚 Student Feedback Portal</h1>
+    <nav>
+        <button onclick="showSection('feedbackForm')">Home</button>
+        <button onclick="showSection('adminLogin')">Admin</button>
+           <button onclick="showSection('adminLogin')"><a href="index2.html">Contact</a></button>
+    </nav>
+</header>
+
+<!-- Feedback Form -->
+<section id="feedbackForm" class="section active">
+    <div class="form-card">
+        <h2>Give Your Feedback</h2>
+        <form id="feedback" onsubmit="saveFeedback(event)">
+            <div class="grid-2">
+                <label>Academic Year
+                    <select name="year" required>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </label>
+                <label>Semester
+                    <select name="sem" required>
+                        <option value="1st">Sem 1</option>
+                        <option value="2nd">Sem 2</option>
+                        <option value="3rd">Sem 3</option>
+                    </select>
+                </label>
+            </div>
+            <label>Date of Feedback
+                <input type="date" name="date" required>
+            </label>
+            <div class="grid-2">
+                <label>Branch
+                    <select name="branch">
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                    </select>
+                </label>
+                <label>Section
+                    <select name="section">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                    </select>
+                </label>
+            </div>
+            <label>Subject
+                <select name="subject">
+                    <option value="OOPS">OOPS</option>
+                    <option value="DSA">DSA</option>
+                </select>
+            </label>
+
+            <label>1) Has the Teacher covered entire syllabus?
+                <select name="ques1" required>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Average</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+            </label>
+
+            <label>Remarks
+                <textarea name="remarks" placeholder="Write your suggestions..."></textarea>
+            </label>
+
+            <div class="form-actions">
+                <button type="submit" class="btn">Submit Feedback</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Admin Login -->
+<section id="adminLogin" class="section">
+    <div class="form-card">
+        <h2>Admin Login</h2>
+        <form onsubmit="loginAdmin(event)">
+            <label>Email
+                <input type="email" id="adminEmail" required>
+            </label>
+            <label>Password
+                <input type="password" id="adminPass" required>
+            </label>
+            <div class="form-actions">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Admin Dashboard -->
+<section id="adminPage" class="section">
+    <div class="dashboard">
+        <div class="dash-header">
+            <h2>📊 Feedback Responses</h2>
+            <button onclick="logoutAdmin()" class="btn danger">Log Out</button>
+        </div>
+        <table id="students-table">
+            <thead>
+                <tr>
+                    <th>Year</th><th>Sem</th><th>Date</th><th>Branch</th>
+                    <th>Section</th><th>Subject</th><th>Q1</th><th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* General Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #00c6ff, #0072ff, #6a11cb);
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
+    min-height: 100vh;
+    color: #222;
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+/* Header */
+.site-header {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+    animation: fadeInDown 0.8s ease;
+}
+.site-header h1 {
+    font-size: 1.5rem;
+    color: #f5efef;
+    animation: glowText 1s infinite alternate;
+    background-color: #ff416c;
+}
+@keyframes glowText {
+    from { text-shadow: 0 0 5px #fff, 0 0 10px #00c6ff; }
+    to { text-shadow: 0 0 15px #0072ff, 0 0 25px #00c6ff; }
+}
+.site-header nav button {
+    background: #ffffffcc;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 25px;
+    transition: 0.3s;
+
+}
+.site-header nav button:hover {
+    background: #00c6ff;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section { display: none; padding: 20px; animation: fadeIn 0.5s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
+@keyframes fadeInDown { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+
+/* Form Card */
+.form-card {
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    animation: scaleIn 0.6s ease;
+}
+@keyframes scaleIn { from {transform: scale(0.95); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+.form-card h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 8px rgba(0,198,255,0.4);
+}
+textarea { resize: vertical; }
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Buttons */
+.btn {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+    padding: 10px 18px;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+.btn.danger {
+    background: linear-gradient(45deg, #ff0844, #ff416c);
+}
+
+/* Table */
+.dashboard {
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#students-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#students-table th, #students-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+#students-table th {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    animation: fadeIn 0.8s ease;
+}
+#students-table tr:hover {
+    background: rgba(0,198,255,0.1);
+    transition: background 0.3s;
+}
+a{
+    color: black;
+    
+    text-decoration: none;
+
+
+}
